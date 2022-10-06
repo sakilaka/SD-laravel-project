@@ -1,7 +1,6 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\AuthController;
 use App\Http\Controllers\StudentController;
 use App\Http\Controllers\TeacherController;
 use App\Http\Controllers\RegisterController;
@@ -32,6 +31,7 @@ Route::post('store-register', [RegisterController::class, 'storeRegister']);
 Route::get('userinfo', [AdminController::class, 'UserAll']);
 Route::get('assign-teacher', [AdminController::class, 'assignTeacher']);
 Route::post('store-assign-teacher', [AdminController::class, 'storeAssignTeacher']);
+Route::get('view-teacher', [AdminController::class, 'viewTeacher']);
 
 Route::get('approveUser/{id}', [ApproveController::class, 'approve']);
 

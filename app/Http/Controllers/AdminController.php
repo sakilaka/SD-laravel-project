@@ -49,6 +49,11 @@ class AdminController extends Controller
         return redirect()->back();
     }
 
+    public function viewTeacher(){
+        $allTeacher = DB::table('assignTeachers')->get();
+        return view('Admin.assignAllTeacher',compact('allTeacher'));
+    }
+
 
 
 }
