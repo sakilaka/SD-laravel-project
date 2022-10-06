@@ -57,6 +57,22 @@
              </div>
 
 
+                <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#assign" aria-expanded="false" aria-controls="collapseLayouts">
+                    <div>
+                    <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
+                   Manage Teacher
+                    <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                </a>
+                <div class="collapse" id="assign" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
+                    <nav class="sb-sidenav-menu-nested nav">
+                        <a class="nav-link" href="{{ url('assign-teacher') }}">Assign Teacher</a>
+                        <a class="nav-link" href="{{ url('view-teacher') }}">List Teacher</a>
+                        
+                    </nav>
+                </div>
+             </div>
+
+
                    
 
 

@@ -1,7 +1,7 @@
 <?php
 namespace App\Http\Controllers;
 use Illuminate\Http\Request;
-use App\Models\Session;
+use Session;
 use Illuminate\Support\Facades\DB;
 class DashboardController extends Controller
 {

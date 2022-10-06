@@ -55,6 +55,16 @@
                         </div>
                     </div>
                 </div>
+
+                <div class="col-xl-3 col-md-6">
+                    <div class="card bg-warning text-black fw-bold mb-4">
+                        <div class="card-body">Assign Teacher List</div>
+                        <div class="card-footer d-flex align-items-center justify-content-between">
+                            <button class="btn btn-dark"><a class="small text-white stretched-link text-decoration-none" href="{{ url('view-teacher') }}">View List</a></button>
+                            <div class="small text-white"><i class="fas fa-angle-right"></i></div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
         </main>      
