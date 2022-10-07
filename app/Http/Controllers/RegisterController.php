@@ -5,13 +5,16 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Session;
 use Illuminate\Support\Facades\DB;
+
 class RegisterController extends Controller
 {
-    public function register(){
+    public function register()
+    {
         return view('register');
     }
 
-    public function storeRegister(Request $r){
+    public function storeRegister(Request $r)
+    {
         // $user = new User();
         $name = $r->name;
         $email = $r->email;
@@ -19,10 +22,9 @@ class RegisterController extends Controller
         $stuId = $r->id;
         $password = $r->password;
         $confirm_pass = $r->confirm;
-        if($password != $confirm_pass){
+        if ($password != $confirm_pass) {
             return redirect()->back()->with('err', 'Password Mismatch');
-        }
-        else{
+        } else {
             DB::table('users')->insert([
                 'name' => $name,
                 'email' => $email,
@@ -32,6 +34,5 @@ class RegisterController extends Controller
             ]);
             return redirect()->back()->with('success', 'Registration Success. Waiting for admin approval');
         }
-
     }
 }

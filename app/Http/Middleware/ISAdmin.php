@@ -18,7 +18,7 @@ class ISAdmin
     {
         if(Session::get('userrole') != 'Admin'){
             
-            return redirect('main-dashboard');
+            return redirect()->back();
         }
         return $next($request);
     }

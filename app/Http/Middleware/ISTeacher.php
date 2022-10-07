@@ -18,7 +18,7 @@ class ISTeacher
     {
         if(Session::get('userrole') != 'Teacher'){
             
-            return redirect('main-dashboard');
+            return redirect()->back();
         }
         return $next($request);
     }

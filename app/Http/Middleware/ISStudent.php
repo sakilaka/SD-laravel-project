@@ -18,7 +18,7 @@ class ISStudent
     {
         if(Session::get('userrole') != 'Student' ){
         
-            return redirect('main-dashboard');
+            return redirect()->back();
         }
         return $next($request);
     }

@@ -40,23 +40,22 @@ Route::get('login', [LoginController::class, 'login']);
 Route::post('store-login', [LoginController::class, 'storelogin']);
 
 
-Route::middleware(['CheckLoggedIn'])->group(function(){
+Route::middleware(['CheckLoggedIn'])->group(function () {
 
-      
 
-    Route::middleware(['CheckISStudent'])->group(function(){
+
+    Route::middleware(['CheckISStudent'])->group(function () {
         Route::get('StudentDashboard', [StudentController::class, 'StudentDashboard']);
-        });
-
-        Route::middleware(['CheckISAdmin'])->group(function(){ 
-        Route::get('AdminDashboard', [AdminController::class, 'AdminDashboard']); 
-        });
-
-        Route::middleware(['CheckISTeacher'])->group(function(){
-        Route::get('TeacherDashboard', [TeacherController::class, 'TeacherDashboard']);
-        });
-
     });
+
+    Route::middleware(['CheckISAdmin'])->group(function () {
+        Route::get('AdminDashboard', [AdminController::class, 'AdminDashboard']);
+    });
+
+    Route::middleware(['CheckISTeacher'])->group(function () {
+        Route::get('TeacherDashboard', [TeacherController::class, 'TeacherDashboard']);
+    });
+});
 
 
 Route::get('course', [StudentController::class, 'course']);
@@ -83,4 +82,3 @@ Route::get('project-all', [StudentController::class, 'allProjectIdeas']);
 Route::get('dashboard', [DashboardController::class, 'dashboard']);
 // Route::get('main-dashboard', [DashboardController::class, 'MainDashboard']);
 Route::get('logout', [DashboardController::class, 'logout']);
-

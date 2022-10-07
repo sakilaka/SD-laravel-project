@@ -12,7 +12,7 @@
       <!-- site icon -->
       <link rel="icon" href="{{ asset('Student/images/fevicon.png') }}" type="image/png" />
       <!-- bootstrap css -->
-      <link rel="stylesheet" href="{{ asset('Student/css/bootstrap.min.css') }}"/>
+      <link rel="stylesheet" href="{{ asset('Student/css/bootstrap.min.css') }}" />
       <!-- site css -->
       <link rel="stylesheet" href="{{ asset('Student/style.css') }}" />
       <!-- responsive css -->
@@ -29,8 +29,8 @@
       <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
       <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
       <![endif]-->
-            <!-- jQuery -->
-        <script src="{{ asset('Student/js/jquery.min.js') }}"></script>
+      <!-- jQuery -->
+      <script src="{{ asset('Student/js/jquery.min.js') }}"></script>
       <script src="{{ asset('Student/js/popper.min.js') }}"></script>
       <script src="{{ asset('Student/js/bootstrap.min.js') }}"></script>
       <!-- wow animation -->
@@ -38,7 +38,7 @@
       <!-- select country -->
       <script src="{{ asset('Student/js/bootstrap-select.js') }}"></script>
       <!-- owl carousel -->
-      <script src="{{ asset('Student/js/owl.carousel.js') }}"></script> 
+      <script src="{{ asset('Student/js/owl.carousel.js') }}"></script>
       <!-- chart js -->
       <script src="{{ asset('Student/js/Chart.min.js') }}"></script>
       <script src="{{ asset('Student/js/Chart.bundle.min.js') }}"></script>
@@ -47,7 +47,7 @@
       <!-- nice scrollbar -->
       <script src="{{ asset('Student/js/perfect-scrollbar.min.js') }}"></script>
       <script>
-         var ps = new PerfectScrollbar('#sidebar');
+            var ps = new PerfectScrollbar('#sidebar');
       </script>
       <!-- custom js -->
       <script src="{{ asset('Student/js/custom.js') }}"></script>

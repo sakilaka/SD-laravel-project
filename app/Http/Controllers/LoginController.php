@@ -16,7 +16,7 @@ class LoginController extends Controller
     {
         $email = $req->email;
         $password = $req->password;
-       
+
         $user = DB::table('users')
             ->where('email', '=', $email)
             ->where('password', '=', md5($password))->first();
@@ -24,30 +24,19 @@ class LoginController extends Controller
         if ($user) {
             if ($user->is_approved == 0) {
                 return redirect()->back()->with('err', 'Not Approved');
-            }
-             else { 
-                Session::put('username',$user->name);
-                Session::put('userrole',$user->role);
+            } else {
+                Session::put('username', $user->name);
+                Session::put('userrole', $user->role);
 
 
-                if ($user->role == 'Teacher') 
-                {
+                if ($user->role == 'Teacher') {
                     return redirect('TeacherDashboard');
-                }
-                else if ($user->role == 'Student') 
-                {
+                } else if ($user->role == 'Student') {
                     return redirect('StudentDashboard');
-                } 
-                else {
+                } else {
                     return redirect('AdminDashboard');
-                }
-
                 }
             }
         }
     }
-
-                   
-                   
-
-
+}
