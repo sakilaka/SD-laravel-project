@@ -4,6 +4,13 @@
 <div class="login-box">
    <h2>Assign teacher</h2>
 
+   
+   @if(Session::has('success'))
+   <div class="alert alert-success">
+      {{ Session::get('success') }}
+   </div>
+   @endif
+
    <form action="{{ url('store-assign-teacher') }}" method="post">
       @csrf
       <div class="form-group">

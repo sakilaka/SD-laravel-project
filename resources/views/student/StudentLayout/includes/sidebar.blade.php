@@ -10,7 +10,7 @@
          <div class="user_profle_side">
             <div class="user_img"><img class="img-responsive" src="{{ asset('Student/images/layout_img/user_img.jpg') }}" alt="#" /></div>
             <div class="user_info">
-               <h6>Student</h6>
+               <h6>{{Session::get('username') }}</h6>
                <p><span class="online_animation"></span> Online</p>
             </div>
          </div>
@@ -24,7 +24,7 @@
 
          </li>
          <li class="active">
-            <a href="{{ url('project-submission') }}"><i class="fa fa-dashboard yellow_color"></i> <span>Project Idea</span></a>
+            <a href="{{ url('view-enroll') }}"><i class="fa fa-dashboard yellow_color"></i> <span>View Enrollment</span></a>
 
          </li>
 

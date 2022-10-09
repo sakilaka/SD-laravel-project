@@ -77,8 +77,10 @@ Route::get('project-submission', [StudentController::class, 'projectSubmission']
 Route::post('store-project-submission', [StudentController::class, 'storeProjectSubmission']);
 Route::get('project-all', [StudentController::class, 'allProjectIdeas']);
 
+Route::get('view-enroll', [StudentController::class, 'viewEnroll']);
+
+
 
 
 Route::get('dashboard', [DashboardController::class, 'dashboard']);
-// Route::get('main-dashboard', [DashboardController::class, 'MainDashboard']);
 Route::get('logout', [DashboardController::class, 'logout']);

@@ -3,10 +3,13 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Session;
 use App\Models\Course;
+use App\Models\UniversitySession;
 use App\Models\Section;
+use Illuminate\Support\Facades\Session;
+
 use App\Models\StudentEnrolls;
+
 
 use Illuminate\Support\Facades\DB;
 
@@ -14,11 +17,12 @@ class StudentController extends Controller
 {
     public function StudentDashboard()
     {
-        $session = Session::all();
+        $session = UniversitySession::all();
         $section = Section::all();
         $course = Course::all();
         return view('student.StudentDashboard', compact('session', 'section', 'course'));
     }
+
     public function StoreEnrolls(Request $req)
     {
         $Session = $req->Session;
@@ -26,11 +30,14 @@ class StudentController extends Controller
         $Course = $req->Course;
 
         $enroll = new StudentEnrolls();
+
+        $Id = Session::get('studentId');
+        $enroll->student_id = $Id;
         $enroll->session = $Session;
         $enroll->section = $Section;
         $enroll->course = $Course;
         $enroll->save();
-        return redirect('project-submission');
+        return redirect()->back()->with('success', 'Enrollment success');
     }
 
     public function EnrollsList()
@@ -52,7 +59,7 @@ class StudentController extends Controller
         $is_active = $req->is_active;
 
         // Next, we have to insert the values in the database table
-        $obj = new Session();
+        $obj = new UniversitySession();
         $obj->name = $session;
         $obj->is_active = $is_active;
         $obj->save();
@@ -64,7 +71,7 @@ class StudentController extends Controller
     public function sessionAll()
     {
 
-        $session = Session::all();
+        $session = UniversitySession::all();
         return view('sessions.sessionAll', compact('session'));
     }
 
@@ -141,5 +148,10 @@ class StudentController extends Controller
     {
         $all = DB::table('project_ideas')->get();
         return view('teacher.projectIdeas', ['project_ideas' => $all]);
+    }
+    public function viewEnroll()
+    {
+        $allEnroll = StudentEnrolls::where('student_id', '=', Session::get('studentId'))->get();
+        return view('student.viewEnrollment', compact('allEnroll'));
     }
 }

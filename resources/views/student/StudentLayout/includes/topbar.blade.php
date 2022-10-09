@@ -10,7 +10,7 @@
 
                <ul class="user_profile_dd">
                   <li>
-                     <a class="dropdown-toggle" data-toggle="dropdown"><img class="img-responsive rounded-circle" src="{{ asset('Student/images/layout_img/user_img.jpg') }}" alt="#" /><span>student</span></a>
+                     <a class="dropdown-toggle" data-toggle="dropdown"><img class="img-responsive rounded-circle" src="{{ asset('Student/images/layout_img/user_img.jpg') }}" alt="#" /><span>{{Session::get('username') }}</span></a>
                      <div class="dropdown-menu">
                         <a class="dropdown-item" href="profile.html">My Profile</a>
                         <a class="dropdown-item" href="settings.html">Settings</a>

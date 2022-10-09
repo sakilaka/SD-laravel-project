@@ -29,15 +29,11 @@
               <li class="nav-item" style="margin-left:15px;">
                 <a class="nav-link text-nowrap" href="{{ url('dashboard') }}">Home</a>
               </li>
-              <li class="nav-item" style="margin-left:15px;">
-                <a class="nav-link text-nowrap" href="{{ url('register') }}">Sign Up</a>
-              </li>
+              
               <li class="nav-item" style="margin-left:15px;">
                 <a class="nav-link text-nowrap" href="{{ url('login') }}">Sign In</a>
               </li>
-              <li class="nav-item" style="margin-left:15px;">
-                <a class="nav-link text-nowrap" href="{{ url('logout') }}">Logout</a>
-              </li>
+          
 
 
             </ul>

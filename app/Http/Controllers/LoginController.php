@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Session;
+use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\DB;
 
 class LoginController extends Controller
@@ -27,13 +27,16 @@ class LoginController extends Controller
             } else {
                 Session::put('username', $user->name);
                 Session::put('userrole', $user->role);
+                Session::put('studentId', $user->student_id);
 
 
                 if ($user->role == 'Teacher') {
                     return redirect('TeacherDashboard');
-                } else if ($user->role == 'Student') {
+                } 
+                else if ($user->role == 'Student') {
                     return redirect('StudentDashboard');
-                } else {
+                } 
+                else {
                     return redirect('AdminDashboard');
                 }
             }

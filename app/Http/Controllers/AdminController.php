@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Session;
+use App\Models\UniversitySession;
 use App\Models\Course;
 use App\Models\Section;
-
+use Illuminate\Support\Facades\Session;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -35,7 +35,7 @@ class AdminController extends Controller
     public function assignTeacher()
     {
         $name = DB::table('users')->where('role', 'Teacher')->get();
-        $session = Session::all();
+        $session = UniversitySession::all();
         $section = Section::all();
         $course = Course::all();
         return view('Admin.teacherAssign', compact('session', 'section', 'course', 'name'));
@@ -54,7 +54,7 @@ class AdminController extends Controller
             'course' => $course,
             'section' => $section
         ]);
-        return redirect()->back();
+        return redirect()->back()->with('success','Teacher assign successful');
     }
 
     public function viewTeacher()
